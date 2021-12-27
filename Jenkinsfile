@@ -20,9 +20,10 @@ pipeline {
 		sh "python3 -m venv ${WORKSPACE}/env"
 		withPythonEnv("${WORKSPACE}/env/bin/python3"){	
                 	sh 'printenv'
+			sh 'whereis python3'
                 	sh 'python3 --version'
-			sh 'python3 -m pip install --user -r requirements.txt'
-			sh 'python3 setup.py install --user'
+			sh 'python3 -m pip install -r requirements.txt'
+			sh 'python3 setup.py install'
 		}
             }
         }
