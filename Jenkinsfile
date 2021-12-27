@@ -18,7 +18,7 @@ pipeline {
                 echo "Database engine is ${DB_ENGINE}"
                 echo "DISABLE_AUTH is ${DISABLE_AUTH}"
 		sh "python3 -m venv ${WORKSPACE}/env"
-		withPythonEnv("${WORKSPACE}/env"){	
+		withPythonEnv("${WORKSPACE}/env/bin/python3"){	
                 	sh 'printenv'
 			sh 'whereis python3'
                 	sh 'python3 --version'
@@ -29,7 +29,7 @@ pipeline {
         }
         stage('tests'){
             steps{
-		withPythonEnv("${WORKSPACE}/env"){
+		withPythonEnv("${WORKSPACE}/env/bin/python3"){
 			sh 'pytest -v tests'
 		}
             }    
