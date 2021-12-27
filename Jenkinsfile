@@ -16,7 +16,7 @@ pipeline {
                 sh 'printenv'
                 sh 'python3 --version'
 		sh 'python3 -m pip install -r requirements.txt'
-		sh 'python3 setup.py install'
+		sh 'python3 setup.py install --user'
             }
         }
         stage('tests'){
