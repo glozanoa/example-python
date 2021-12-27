@@ -15,7 +15,7 @@ pipeline {
                 echo "DISABLE_AUTH is ${DISABLE_AUTH}"
                 sh 'printenv'
                 sh 'python3 --version'
-		sh 'python3 -m pip install -r requirements.txt'
+		sh 'python3 -m pip install --user -r requirements.txt'
 		sh 'python3 setup.py install --user'
             }
         }
