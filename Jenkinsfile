@@ -17,19 +17,18 @@ pipeline {
             steps {
                 echo "Database engine is ${DB_ENGINE}"
                 echo "DISABLE_AUTH is ${DISABLE_AUTH}"
-		sh "python3 -m venv ${WORKSPACE}/env"
-		withPythonEnv("${WORKSPACE}/env/bin/python3"){	
+		withPythonEnv('Python3'){	
                 	sh 'printenv'
 			sh 'whereis python3'
                 	sh 'python3 --version'
-			sh 'python3 -m pip install -r requirements.txt'
+			sh 'pip install -r requirements.txt'
 			sh 'python3 setup.py install'
 		}
             }
         }
         stage('tests'){
             steps{
-		withPythonEnv("{WORKSPACE}/env/bin/python3"){
+		withPythonEnv('Python3'){
 			sh 'pytest -v tests'
 		}
             }    
