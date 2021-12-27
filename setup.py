@@ -31,18 +31,16 @@ def get_requirements():
 setup(
     name='awesome',
     version=VERSION,
-    description='Generic algorithms and data structures',
+    description='x',
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
-    keywords=['Algorithms', 'Data Structures'],
-    author='glozanoa',
-    author_email='glozanoa@uni.pe',
-    url='https://github.com/glozanoa/adas',
+    author='x',
+    author_email='x',
+    url='https://github.com/glozanoa/example-python',
     license='GPL3',
     classifiers = [
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: POSIX :: Linux",
-        "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9"
     ],
     packages=find_packages(),
