@@ -2,6 +2,10 @@ pipeline {
     agent { 
 	docker { image 'python:3.9' } 
     }
+
+    triggers {
+        githubPush()
+    }
     
     environment {
         DISABLE_AUTH = 'true'
